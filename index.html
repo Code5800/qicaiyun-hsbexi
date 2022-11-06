@@ -18,6 +18,22 @@
         <div class="container">
 		<span id="hitokoto">注意：部分地区打不开需切换网络或者用流量打开！</span>
     </div>
+<script>
+    // 跳转提示
+    if (is_weixn_qq()) {;
+        window.location.href = 'https://c.pc.qq.com/middle.html?pfurl='+window.location.href; 
+    }
+    function is_weixn_qq(){
+        // 判断当前是否微信/QQ浏览器
+        var ua = navigator.userAgent;
+        var isWeixin = !!/MicroMessenger/i.test(ua);
+        var isQQ = !!/QQ\//i.test(ua);
+        if(isWeixin||isQQ){
+            return true;
+        }
+        return false;
+    }
+    </script>
 		<script src="1https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
         <hr class="hr">
         <nav class="cover-navigation cover-navigation--primary">
@@ -37,21 +53,6 @@
     <div class="filter"></div>
     <canvas id="canvas" width="1366" height="638"></canvas>
     <script type="text/javascript" src="./js8/style.js"></script>
-   <script>
-    // 跳转提示
-    if (is_weixn_qq()) {;
-        window.location.href = 'https://c.pc.qq.com/middle.html?pfurl='+window.location.href; 
-    }
-    function is_weixn_qq(){
-        // 判断当前是否微信/QQ浏览器
-        var ua = navigator.userAgent;
-        var isWeixin = !!/MicroMessenger/i.test(ua);
-        var isQQ = !!/QQ\//i.test(ua);
-        if(isWeixin||isQQ){
-            return true;
-        }
-        return false;
-    }
-    </script>
+   
 </body>
 </html>
